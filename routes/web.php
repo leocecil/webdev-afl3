@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\FirstController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\StoreController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -24,6 +25,8 @@ Route::get('/about', function() {
     return view('about');
 })->name('about');
 
-Route::get('/store', function() {
-    return view('store');
-})->name('store');
+// Route::get('/store', function() {
+//     return view('store');
+// })->name('store');
+
+Route::get('/store', [StoreController::class, 'show'])->name('store');
